@@ -1,16 +1,14 @@
 <template>
-  <div id="navigation">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-    
-    <div id="footer-div">
-      <Footer></Footer>
-    </div>
-  </div>
-  
+  <nav>
+    <router-link to="/">{{mylangData.home}}</router-link> |
+    <router-link to="/animals">{{mylangData.animals}}</router-link> |
+    <router-link to="/lostpets">{{mylangData.lostpets}}</router-link> |
+    <router-link to="/add">{{mylangData.add}}</router-link> |
+    <router-link to="/myaccount">{{mylangData.myaccount}}</router-link> |
+    <router-link to="/about">{{mylangData.about}}</router-link>
+  </nav>
+  <button @click="changeLang()">Lang</button>
+  <router-view/>
 </template>
 
 <style>
@@ -30,14 +28,45 @@
   text-align: center;
 }
 </style>
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
 
 <script>
   import Footer from './components/Footer.vue'
-
-  export default{
+  import fullLangData from "./data/nav.js"
+  export default {
     name: 'App',
     components: {
       Footer
+    },
+    data(){
+      return{
+        currentLang:'',
+        mylangData:''
+      }
+    },
+    created(){
+      this.currentLang = localStorage.getItem("lang");
+      if(this.currentLang==null) {
+        localStorage.setItem("lang","sr");
+        this.currentLang = "sr";
+      }
+      this.mylangData = fullLangData[this.currentLang];
+    },
+    methods:{
+      changeLang(){
+        this.currentLang = localStorage.getItem("lang");
+        if(this.currentLang=="en"){
+          this.currentLang="sr";
+        }
+        else{
+          this.currentLang="en"
+        }
+        localStorage.setItem("lang",this.currentLang);
+        this.$router.go();
+      }
     }
   }
 </script>
