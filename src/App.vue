@@ -1,9 +1,16 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="navigation">
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav>
+    <router-view/>
+    
+    <div id="footer-div">
+      <Footer></Footer>
+    </div>
+  </div>
+  
 </template>
 
 <style>
@@ -14,17 +21,23 @@
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+#footer-div {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
 }
 </style>
+
+<script>
+  import Footer from './components/Footer.vue'
+
+  export default{
+    name: 'App',
+    components: {
+      Footer
+    }
+  }
+</script>
