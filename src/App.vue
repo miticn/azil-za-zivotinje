@@ -16,7 +16,10 @@
             <router-link to="/addyourad" :class="($route.name =='addyourad')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.add}}</router-link>
             <router-link to="/myaccount" :class="($route.name =='myaccount')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.myaccount}}</router-link>
             <router-link to="/about" :class="($route.name =='about')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.about}}</router-link>
-            <button @click="changeLang()">Lang</button>
+            <div class="btn-group">
+              <button type="button" @click="changeLang('en')" :class="(this.currentLang=='en')?'btn btn-sm btn-secondary active':'btn btn-sm btn-secondary'">EN</button>
+              <button type="button" @click="changeLang('sr')" :class="(this.currentLang=='sr')?'btn btn-sm btn-secondary active':'btn btn-sm btn-secondary'">SR</button>
+            </div>
         </div>
     </div>
     </div>
@@ -76,13 +79,12 @@ nav a.router-link-exact-active {
       this.mylangData = fullLangData[this.currentLang];
     },
     methods:{
-      changeLang(){
-        this.currentLang = localStorage.getItem("lang");
-        if(this.currentLang=="en"){
-          this.currentLang="sr";
+      changeLang(lan){
+        if(lan=="en"){
+          this.currentLang="en";
         }
-        else{
-          this.currentLang="en"
+        else if(lan=="sr"){
+          this.currentLang="sr"
         }
         localStorage.setItem("lang",this.currentLang);
         this.$router.go();
