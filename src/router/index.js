@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AddYourAd from '../views/AddYourAd.vue'
 import AdAdded from '../views/AdAdded.vue'
 import AllAnimals from '../views/AllAnimals.vue'
+import MyAccount from '../views/MyAccount.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/addyourad',
     name: 'AddYourAd',
     component: AddYourAd
+  },
+  {
+    path: '/myaccount',
+    name: 'MyAccount',
+    component: MyAccount
   },
   {
     path: '/myaccount',
