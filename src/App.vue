@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-  <nav class="container navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="container navbar navbar-expand-lg">
     <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,8 +17,8 @@
             <router-link to="/myaccount" :class="($route.name =='myaccount')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.myaccount}}</router-link>
             <router-link to="/about" :class="($route.name =='about')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.about}}</router-link>
             <div class="btn-group">
-              <button type="button" @click="changeLang('en')" :class="(this.currentLang=='en')?'btn btn-sm btn-secondary active':'btn btn-sm btn-secondary'">EN</button>
-              <button type="button" @click="changeLang('sr')" :class="(this.currentLang=='sr')?'btn btn-sm btn-secondary active':'btn btn-sm btn-secondary'">SR</button>
+              <button type="button" @click="changeLang('en')" :class="(this.currentLang=='en')?'btn btn-sm active':'btn btn-sm '">EN</button>
+              <button type="button" @click="changeLang('sr')" :class="(this.currentLang=='sr')?'btn btn-sm active':'btn btn-sm '">SR</button>
             </div>
         </div>
     </div>
@@ -34,6 +34,13 @@
 </template>
 
 <style>
+#nav {
+  background-color:#2e2044;
+  color: #f7bc70;
+}
+router-link.nav-item{
+  color: #f7bc70;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,7 +57,20 @@
   text-align: center;
 }
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #f7bc70 !important;
+  background-color: #160f21;
+}
+nav a.nav-item{
+  color: #eccfc9;
+}
+nav a.nav-item:hover{
+  color: #eccfc9;
+}
+nav button.active{
+  background-color:#f7bc70 !important;
+}
+nav button.btn{
+  background-color:gray   ;
 }
 </style>
 
