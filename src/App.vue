@@ -1,20 +1,30 @@
 <template>
-
-  <div id="header-div">
+  <div id="nav">
+  <nav class="container navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <Header></Header>
-  </div>
-  <div>
-    <nav>
-    <router-link to="/">{{mylangData.home}}</router-link> |
-    <router-link to="/animals">{{mylangData.animals}}</router-link> |
-    <router-link to="/lostpets">{{mylangData.lostpets}}</router-link> |
-    <router-link to="/addyourad">{{mylangData.add}}</router-link> |
-    <router-link to="/myaccount">{{mylangData.myaccount}}</router-link> |
-    <router-link to="/about">{{mylangData.about}}</router-link>
+    
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto">
+            <router-link to="/" :class="($route.name =='home')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.home}}</router-link>
+            <router-link to="/animals" :class="($route.name =='animals')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.animals}}</router-link>
+            <router-link to="/lostpets" :class="($route.name =='lostpets')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.lostpets}}</router-link>
+            <router-link to="/addyourad" :class="($route.name =='addyourad')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.add}}</router-link>
+            <router-link to="/myaccount" :class="($route.name =='myaccount')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.myaccount}}</router-link>
+            <router-link to="/about" :class="($route.name =='about')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.about}}</router-link>
+            <button @click="changeLang()">Lang</button>
+        </div>
+    </div>
+    </div>
   </nav>
-  <button @click="changeLang()">Lang</button>
+ </div>
+  
   <router-view/>
-  </div>
+
   <div id="footer-div">
     <Footer></Footer>
   </div>
