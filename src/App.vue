@@ -1,14 +1,23 @@
 <template>
-  <nav>
+
+  <div id="header-div">
+    <Header></Header>
+  </div>
+  <div>
+    <nav>
     <router-link to="/">{{mylangData.home}}</router-link> |
     <router-link to="/animals">{{mylangData.animals}}</router-link> |
     <router-link to="/lostpets">{{mylangData.lostpets}}</router-link> |
-    <router-link to="/add">{{mylangData.add}}</router-link> |
+    <router-link to="/addyourad">{{mylangData.add}}</router-link> |
     <router-link to="/myaccount">{{mylangData.myaccount}}</router-link> |
     <router-link to="/about">{{mylangData.about}}</router-link>
   </nav>
   <button @click="changeLang()">Lang</button>
   <router-view/>
+  </div>
+  <div id="footer-div">
+    <Footer></Footer>
+  </div>
 </template>
 
 <style>
@@ -27,7 +36,6 @@
   height: 40px;
   text-align: center;
 }
-</style>
 nav a.router-link-exact-active {
   color: #42b983;
 }
@@ -35,11 +43,13 @@ nav a.router-link-exact-active {
 
 <script>
   import Footer from './components/Footer.vue'
+  import Header from './components/Header.vue'
   import fullLangData from "./data/nav.js"
   export default {
     name: 'App',
     components: {
-      Footer
+      Footer,
+      Header
     },
     data(){
       return{
