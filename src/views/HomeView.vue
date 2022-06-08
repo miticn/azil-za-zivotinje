@@ -5,11 +5,11 @@
           <h1 class="align-middle pt-5 pb-5">{{mylangData.title}}</h1>
           <router-link to="/addyourad" class="nav-item nav-link mx-auto">
             <button class="btn btn-lg btn-1 text-wrap">
-            Pronađi izgubljenog ljubimca.
+            Izgubio sam ljubimca
             </button>
           </router-link>
           <router-link to="/lostpets" class="nav-item nav-link mx-auto">
-            <button class="btn btn-lg btn-2 text-wrap">Pogledaj izgubljene ljubimce.</button>
+            <button class="btn btn-lg btn-2 text-wrap">Izgubljeni ljubimci</button>
           </router-link>
 
        </div>

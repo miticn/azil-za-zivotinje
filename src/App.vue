@@ -25,7 +25,8 @@
     </div>
   </nav>
  </div>
-  
+  <BreadCrumbs class="row justify-content-center mt-4" :crumbs="crumbs" @selected="selected"/>
+
   <router-view/>
 
   <div id="footer-div">
@@ -78,6 +79,7 @@ nav button.btn{
 </style>
 
 <script>
+  import BreadCrumbs from "./components/BreadCrumbs.vue"
   import Footer from './components/Footer.vue'
   import Header from './components/Header.vue'
   import fullLangData from "./data/nav.js"
@@ -85,13 +87,19 @@ nav button.btn{
     name: 'App',
     components: {
       Footer,
-      Header
+      Header,
+      BreadCrumbs
     },
     data(){
       return{
         currentLang:'',
-        mylangData:''
+        mylangData:'',
+        crumbs: ['Home','test'],
       }
+    },
+    updated(){
+      //let routes = this.$route['path'].split('/');
+      this.crumbs = [this.$route.name];
     },
     created(){
       this.currentLang = localStorage.getItem("lang");

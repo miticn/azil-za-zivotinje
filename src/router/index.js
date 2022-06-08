@@ -7,32 +7,32 @@ import AllAnimals from '../views/AllAnimals.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: HomeView
   },
   {
     path: '/animals',
-    name: 'animals',
+    name: 'Animals',
     component: AllAnimals
   },
   {
     path: '/lostpets',
-    name: 'lostpets',
+    name: 'Lost Pets',
     component: ''
   },
   {
     path: '/addyourad',
-    name: 'AddYourAd',
+    name: 'Add Your Ad',
     component: AddYourAd
   },
   {
     path: '/myaccount',
-    name: 'myaccount',
+    name: 'My account',
     component: ''
   },
   {
     path: '/about',
-    name: 'about',
+    name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
