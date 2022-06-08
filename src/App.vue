@@ -9,7 +9,7 @@
     
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto">
+        <div class="navbar-nav ms-auto">
             <router-link to="/" :class="($route.name =='home')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.home}}</router-link>
             <router-link to="/animals" :class="($route.name =='animals')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.animals}}</router-link>
             <router-link to="/lostpets" :class="($route.name =='lostpets')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.lostpets}}</router-link>
