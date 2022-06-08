@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AddYourAd from '../views/AddYourAd.vue'
 import AdAdded from '../views/AdAdded.vue'
 import AllAnimals from '../views/AllAnimals.vue'
+import OneAnimal from '../views/OneAnimal.vue'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/animals',
     name: 'Animals',
     component: AllAnimals
+  },
+  {
+    path: '/animals/:id',
+    name: 'Animal',
+    component: OneAnimal
   },
   {
     path: '/lostpets',
