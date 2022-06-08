@@ -6,14 +6,19 @@
 </template>
 
 
-<style>
+<style scoped>
     img.logo{
-        width: 100px;
-        height: 100px;
+        width: 7.5rem;
+        height: auto;
     }
     #headerbar{
         display: flex;
         align-items: center;
+    }
+    h1{
+        margin-left:0;
+        font-size: 2rem;
+        margin-bottom: 0;
     }
 </style>
 
