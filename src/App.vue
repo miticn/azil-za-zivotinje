@@ -34,6 +34,9 @@
 </template>
 
 <style>
+body{
+  background-color: #f7f7f7;
+}
 #nav {
   background-color:#2e2044;
   color: #f7bc70;
@@ -57,8 +60,8 @@ router-link.nav-item{
   text-align: center;
 }
 nav a.router-link-exact-active {
-  color: #f7bc70 !important;
-  background-color: #160f21;
+  color: #2e2044  !important;
+  background-color: #f7bc70;
 }
 nav a.nav-item{
   color: #eccfc9;
@@ -70,7 +73,7 @@ nav button.active{
   background-color:#f7bc70 !important;
 }
 nav button.btn{
-  background-color:gray   ;
+  background-color:gray;
 }
 </style>
 
