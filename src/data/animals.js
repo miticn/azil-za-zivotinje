@@ -1,4 +1,5 @@
 const animals =[{
+        id:1,
         group:"dog",
         name:"Labrador Boni",
         desc:"",
@@ -7,6 +8,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:2,
         group:"dog",
         name:"Samojed Beti",
         desc:"",
@@ -15,6 +17,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:3,
         group:"dog",
         name:"Pudlica Dona",
         desc:"",
@@ -23,6 +26,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:4,
         group:"cat",
         name:"Koko",
         desc:"",
@@ -31,6 +35,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:5,
         group:"cat",
         name:"Una",
         desc:"",
@@ -39,6 +44,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:6,
         group:"cat",
         name:"Buca",
         desc:"",
@@ -47,6 +53,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:7,
         group:"bird",
         name:"Cvrle",
         desc:"",
@@ -55,6 +62,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:8,
         group:"bird",
         name:"Zigi",
         desc:"",
@@ -63,6 +71,7 @@ const animals =[{
         gallery:[]
     },
     {
+        id:9,
         group:"bird",
         name:"Pepi",
         desc:"",
@@ -71,3 +80,5 @@ const animals =[{
         gallery:[]
     }
 ];
+
+export default animals;

@@ -3,7 +3,7 @@
 <div class="row carousel-row">
     
 
-    <div id="carouselExampleIndicators" class="carousel slide col col-sm-8 offset-sm-2" data-bs-ride="true">
+    <div id="carouselExampleIndicators" class="carousel carousel-dark slide col col-sm-8 offset-sm-2" data-bs-ride="true">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -33,7 +33,4 @@
 </template>
 
 <style scoped>
-    .carousel-row{
-        background-color: black;
-    }
 </style>
