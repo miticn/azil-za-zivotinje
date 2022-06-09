@@ -35,7 +35,8 @@ const animals =[{
         desc:"",
         weight:"",
         age:"",
-        gallery:[]
+        path:'pets/cats/4/',
+        gallery:['1.jfif','2.jfif','3.jfif']
     },
     {
         id:5,
@@ -44,7 +45,8 @@ const animals =[{
         desc:"",
         weight:"",
         age:"",
-        gallery:[]
+        path:'pets/cats/5/',
+        gallery:['1.jfif','2.jfif','3.jfif']
     },
     {
         id:6,
@@ -53,7 +55,8 @@ const animals =[{
         desc:"",
         weight:"",
         age:"",
-        gallery:[]
+        path:'pets/cats/6/',
+        gallery:['1.jfif','2.jfif','3.jfif','4.jfif']
     },
     {
         id:7,
@@ -62,7 +65,8 @@ const animals =[{
         desc:"",
         weight:"",
         age:"",
-        gallery:[]
+        path:'pets/birds/7/',
+        gallery:['1.jfif','2.jfif','3.jfif']
     },
     {
         id:8,
@@ -71,7 +75,8 @@ const animals =[{
         desc:"",
         weight:"",
         age:"",
-        gallery:[]
+        path:'pets/birds/8/',
+        gallery:['1.jfif','2.jfif','3.jfif']
     },
     {
         id:9,
@@ -80,7 +85,8 @@ const animals =[{
         desc:"",
         weight:"",
         age:"",
-        gallery:[]
+        path:'pets/birds/9/',
+        gallery:['1.jfif','2.jfif']
     }
 ];
 

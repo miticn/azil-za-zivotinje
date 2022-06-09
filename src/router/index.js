@@ -5,6 +5,7 @@ import AdAdded from '../views/AdAdded.vue'
 import AllAnimals from '../views/AllAnimals.vue'
 import OneAnimal from '../views/OneAnimal.vue'
 import LostPets from '../views/LostPets.vue'
+import AnimalGroups from '../views/AnimalGroups.vue'
 
 const routes = [
   {
@@ -15,11 +16,16 @@ const routes = [
   {
     path: '/animals',
     name: 'Animals',
+    component: AnimalGroups
+  },
+  {
+    path: '/animals/:type',
+    name: 'Animal',
     component: AllAnimals
   },
   {
-    path: '/animals/:id',
-    name: 'Animal',
+    path: '/animals/:type/:id',
+    name: 'One Animal',
     component: OneAnimal
   },
   {
