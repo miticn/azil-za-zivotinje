@@ -4,6 +4,7 @@ import AddYourAd from '../views/AddYourAd.vue'
 import AdAdded from '../views/AdAdded.vue'
 import AllAnimals from '../views/AllAnimals.vue'
 import OneAnimal from '../views/OneAnimal.vue'
+import LostPets from '../views/LostPets.vue'
 
 const routes = [
   {
@@ -24,7 +25,7 @@ const routes = [
   {
     path: '/lostpets',
     name: 'Lost Pets',
-    component: ''
+    component: LostPets
   },
   {
     path: '/addyourad',
