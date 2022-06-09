@@ -5,7 +5,8 @@ const animals =[{
         desc:"",
         weight:"30kg",
         age:"",
-        gallery:[]
+        path:'pets/dogs/1/',
+        gallery:['1.jfif','2.jfif','3.jfif','4.jfif','5.jfif']
     },
     {
         id:2,
@@ -14,7 +15,8 @@ const animals =[{
         desc:"",
         weight:"20kg",
         age:"",
-        gallery:[]
+        path:'pets/dogs/2/',
+        gallery:['1.jfif','2.jfif']
     },
     {
         id:3,
@@ -23,7 +25,8 @@ const animals =[{
         desc:"",
         weight:"5kg",
         age:"",
-        gallery:[]
+        path:'pets/dogs/3/',
+        gallery:['1.jfif','2.jfif','3.jfif','4.jfif']
     },
     {
         id:4,
