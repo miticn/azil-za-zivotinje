@@ -53,7 +53,6 @@ router-link.nav-item{
   color: #2c3e50;
 }
 #footer-div {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
