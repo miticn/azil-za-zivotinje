@@ -7,7 +7,7 @@
             <table id="ad-table">
             <tr>
                 <td>Naslov oglasa: </td>
-                <td> <input type="text" name="tittle" v-model="tittle"> </td>
+                <td> <input type="text" name="title" v-model="title"> </td>
             </tr>
             <tr>
                 <td>Opis: </td>
@@ -45,14 +45,14 @@
         name: 'AddYourAdd',
         data(){
             return{
-            tittle: '',
+            title: '',
             description: '',
             allads: []
             }
         },
         methods: {
             addAds(){
-                this.allads.push({'user': 'test1', 'tittle': this.tittle, 'description': this.description})
+                this.allads.push({'user': 'test1', 'title': this.title, 'description': this.description})
                 localStorage.setItem('allAds', JSON.stringify(this.allads))
                 this.$router.push('adadded')
             }

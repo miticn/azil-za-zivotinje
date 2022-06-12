@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomeView
+    component: HomeView,
+    meta: { title: 'Home' }
   },
   {
     path: '/animals',

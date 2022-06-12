@@ -88,6 +88,14 @@ a, a:hover{
   import fullLangData from "./data/nav.js"
   export default {
     name: 'App',
+    watch: {
+        $route: {
+            immediate: true,
+            handler(to) {
+                document.title = 'Sigurna kućica' + ((to.meta.title != null)?(' | '+to.meta.title):'');
+            }
+        },
+    },
     components: {
       Footer,
       Header,
