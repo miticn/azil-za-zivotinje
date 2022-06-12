@@ -1,6 +1,6 @@
 const allAds = [
     {
-        id:0,
+        id:'0',
         user: 'Marko',
         title: 'Bella',
         phone: '066-555-5555',
