@@ -1,7 +1,7 @@
 <template>
   <div class="home">
      <div class="row">
-       <div class="col-sm-6">
+       <div class="col col-sm-6">
           <h1 class="align-middle pt-5 pb-5">{{mylangData.title}}</h1>
           <router-link to="/addyourad" class="nav-item nav-link mx-auto">
             <button class="btn btn-lg btn-1 text-wrap">
@@ -24,9 +24,16 @@
           </router-link>
 
        </div>
-       <div class="col-sm-6">
+       <div class="col col-sm-6">
         <img src="../assets/lara.jpg" alt="">
        </div>
+     </div>
+     <div class="row">
+      <div class="col col-sm-12">
+        <div v-for="ad in allads" :key="ad.user">
+          <one-ad :id="ad.id" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+        </div>
+      </div>
      </div>
     <img alt="" src="../assets/background.jpg">
   </div>
@@ -68,11 +75,15 @@
 
 <script>
 import fullLangData from "../data/home.js"
+import OneAd from "../components/OneAd.vue"
+import allAds from "../data/ads.js"
 export default {
+  components: { OneAd },
   data(){
       return{
         currentLang:'',
-        mylangData:''
+        mylangData:'',
+        allads:''
       }
     },
     created(){
@@ -82,6 +93,12 @@ export default {
         this.currentLang = "sr";
       }
       this.mylangData = fullLangData[this.currentLang];
+
+      if(localStorage.getItem('allAds')==null){
+            localStorage.setItem('allAds', JSON.stringify(allAds))
+        }
+        this.allads=JSON.parse(localStorage.getItem('allAds'))
+        this.allads= this.allads.slice(0,3);
     },
 }
 </script>
