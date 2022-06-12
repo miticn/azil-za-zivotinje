@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div v-for="ad in allads" :key="ad.user">
-            <one-ad :title=ad.title :phone=ad.phone :description=ad.description :user=ad.user></one-ad>
+            <one-ad :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
         </div>
     </div>
 </template>

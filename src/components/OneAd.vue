@@ -1,7 +1,7 @@
 <template>
     <div class="oglas">
         <h1>{{title}}</h1>{{user}} 
-        <h4>- {{phone}} - </h4>
+        <h4> {{phone}} </h4>
         <p>{{description}}</p>
         <button @click="savePDF()">PDF</button>
     </div>
@@ -19,10 +19,18 @@ import allAds from "../data/ads.js"
 import jsPDF from 'jspdf'
 export default {
     name: 'OneAd',
-    props: ['title','phone','description','user'],
-    data(){
-        return{
-            allads : ''
+    props: {
+        title:{
+            default: ''
+        },
+        phone:{
+            default: ''
+        },
+        description:{
+            default: ''
+        },
+        user:{
+            default: ''
         }
     },
     created(){
@@ -35,15 +43,19 @@ export default {
         savePDF(){
             var doc = new jsPDF();
 
-            doc.text(20, 20, 'Hello world!');
-            doc.text(20, 30, 'This is client-side Javascript to generate a PDF.');
-
-            // Add new page
-            doc.addPage();
-            doc.text(20, 20, 'Visit CodexWorld.com');
+            doc.setFont("helvetica");
+            //doc.setFontType("bold");
+            doc.setFontSize(40);
+            doc.text(this.title,105, 110, 'center');
+            doc.setFontSize(10);
+            doc.text(this.user,105, 120, 'center');
+            doc.setFontSize(20);
+            doc.text(this.phone, 105, 130, 'center');
+            doc.text(doc.splitTextToSize(this.description,150), 105, 140, 'center');
+            
 
             // Save the PDF
-            doc.save('document.pdf');
+            doc.save(this.title+'.pdf');
 
         }
     }
