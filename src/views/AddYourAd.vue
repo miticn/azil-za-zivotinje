@@ -45,6 +45,7 @@
         name: 'AddYourAdd',
         data(){
             return{
+            currId:0,
             title: '',
             description: '',
             allads: []
@@ -52,9 +53,11 @@
         },
         methods: {
             addAds(){
-                this.allads.push({'user': 'test1', 'title': this.title, 'description': this.description})
+                this.allads.push({'id':this.currId, 'user': 'myUser', 'title': this.title, 'description': this.description})
                 localStorage.setItem('allAds', JSON.stringify(this.allads))
                 this.$router.push('adadded')
+                this.currId=parseInt(this.currId)+1;
+                localStorage.setItem('currId', this.currId)
             }
         },
         created(){
@@ -62,6 +65,11 @@
                 localStorage.setItem('allAds', JSON.stringify(allAds))
             }
             this.allads=JSON.parse(localStorage.getItem('allAds'))
+
+            if(localStorage.getItem('currId')==null){
+                localStorage.setItem('currId', allAds.length)
+            }
+            this.currId=localStorage.getItem('currId')
         }
     }
 </script>
