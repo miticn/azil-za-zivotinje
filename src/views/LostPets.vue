@@ -1,20 +1,32 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col col-sm-8">
-                <div v-for="ad in allads" :key="ad.user">
-                    <one-ad :class="(this.ida==ad.id)?'selected':''" :id="ad.id" @click="showComments(ad.id)" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+                <div id="ads" class="col col-sm-8 mr-0 pr-0">
+                    <div v-for="ad in allads" :key="ad.user">
+                        <one-ad :class="(this.ida==ad.id)?'selected':''" :id="ad.id" @click="showComments(ad.id)" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+                    </div>
                 </div>
-            </div>
-            <div class="col col-sm-4">
-                <AllComments class="comments" :key="ida" :ida="ida"></AllComments>
-            </div>
+                <div id="comments" class="col col-sm-4 pl-0 comments">
+                    <AllComments :key="ida" :ida="ida"></AllComments>
+                </div>
         </div>
     </div>
 </template>
 <style scoped>
     .selected{
-        color: red;
+        background-color: white;
+        border-right: none !important;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .pr-0{
+        padding-right: 0;
+    }
+    .pl-0{
+        padding-left: 0;
+    }
+    .addAndComm{
+        border:solid;
     }
 </style>
 
@@ -39,6 +51,8 @@ export default {
     },
     methods:{
         showComments(id){
+            var leftHeight = document.getElementById('ads').clientHeight;
+            document.getElementById('comments').style.height = leftHeight + 'px';
             this.ida = id;
         }
     }

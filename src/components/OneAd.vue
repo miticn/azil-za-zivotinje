@@ -10,7 +10,6 @@
 <style scoped>
     div.oglas{
         border: solid;
-        background-color:white;
     }
 </style>
 

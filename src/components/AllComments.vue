@@ -4,6 +4,7 @@
             <h1>{{comment.user}}</h1>
             <p>{{comment.comment}}</p>
         </div>
+        <h1 v-if="this.myComments.length==0">Nema Komentara</h1>
         <form>
             <textarea name="commentInput" cols="40" rows="3" v-model="comment"></textarea>
             <button @click="addComment()">Send</button>
@@ -14,8 +15,12 @@
 
 <style scoped>
 .allcomments{
-    overflow-y:scroll;
-    overflow-x:hidden;
+    background-color:white;
+    border-right: solid;
+    border-top: solid;
+    border-bottom: solid;
+    height: 100%;
+    overflow-y: scroll;
 }
 </style>
 
