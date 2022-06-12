@@ -3,13 +3,18 @@
         <h1>{{title}}</h1>{{user}} 
         <h4> {{phone}} </h4>
         <p>{{description}}</p>
-        <button @click="savePDF()">PDF</button>
+        <button class="btn pdf" @click="savePDF()">PDF</button>
     </div>
 </template>
 
 <style scoped>
     div.oglas{
         border: solid;
+    }
+    .pdf{
+        background-color:#f7bc70;
+        margin-bottom: 10px;
+        border:solid;
     }
 </style>
 
