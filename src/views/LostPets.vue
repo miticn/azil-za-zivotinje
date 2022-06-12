@@ -3,16 +3,20 @@
         <div class="row">
             <div class="col col-sm-8">
                 <div v-for="ad in allads" :key="ad.user">
-                    <one-ad id="" @click="showComments(id)" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+                    <one-ad :class="(this.ida==ad.id)?'selected':''" :id="ad.id" @click="showComments(ad.id)" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
                 </div>
             </div>
             <div class="col col-sm-4">
-                <AllComments></AllComments>
+                <AllComments class="comments" :key="ida" :ida="ida"></AllComments>
             </div>
         </div>
     </div>
 </template>
-
+<style scoped>
+    .selected{
+        color: red;
+    }
+</style>
 
 <script>
 import allAds from "../data/ads.js"
@@ -23,7 +27,8 @@ export default {
     name: 'LostPets',
     data(){
         return{
-            allads : ''
+            allads : '',
+            ida:'-1'
         }
     },
     created(){
@@ -34,7 +39,7 @@ export default {
     },
     methods:{
         showComments(id){
-            alert(id);
+            this.ida = id;
         }
     }
 }

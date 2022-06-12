@@ -1,20 +1,22 @@
 <template>
-    <div>
-        <h1></h1>
-        <div v-for="comment in comments" :key="comment.oglas">
+    <div class="allcomments" v-if="this.ida!=-1">
+        <div v-for="comment in myComments" :key="comment.oglas">
             <h1>{{comment.user}}</h1>
-            <p>{{comment.komentar}}</p>
+            <p>{{comment.comment}}</p>
         </div>
         <form>
-            <textarea name="commentInput" cols="40" rows="3"></textarea>
-            <button type="submit">Send</button>
+            <textarea name="commentInput" cols="40" rows="3" v-model="comment"></textarea>
+            <button @click="addComment()">Send</button>
         </form>
     </div>
     
 </template>
 
 <style scoped>
-
+.allcomments{
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
 </style>
 
 <script>
@@ -22,9 +24,16 @@ import comments from '../data/comments.js';
 export default {
 
     name: 'AllComments',
+    props: {
+        ida:{
+            default: '-1'
+        },
+    },
     data(){
         return{
-            comments:''
+            comment:'',
+            comments:'',
+            myComments: []
         }
     },
     created(){
@@ -32,6 +41,22 @@ export default {
             localStorage.setItem('comments', JSON.stringify(comments))
         }
         this.comments=JSON.parse(localStorage.getItem('comments'))
+
+
+        for(let i = 0; i< this.comments.length; i++)
+            if(this.comments[i].id==this.ida){
+                this.myComments.push(this.comments[i]);
+            }
+    },
+    methods:{
+        addComment(){
+            this.comments.push({
+                id: this.ida,
+                user: 'myUser',
+                comment: this.comment
+            });
+            localStorage.setItem('comments', JSON.stringify(this.comments));
+        }
     }
 }
 </script>
