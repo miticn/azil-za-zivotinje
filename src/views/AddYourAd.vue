@@ -1,6 +1,5 @@
 <template>
         <div id="ad-table-div">
-            <br>
             <h1>{{adpagelang.title}}</h1>
             <br>
             <table id="ad-table">
@@ -39,7 +38,12 @@
 
 <style>
     #ad-table-div{
-        background-color: #ebeff2 ;
+    border:solid;
+    border-color:#2e2044;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
     }
     #ad-table{
         margin-left: auto;

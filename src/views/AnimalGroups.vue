@@ -5,7 +5,8 @@
                 <a href="/animals/dog/">
                 <img class="card-img-top" :src="`${publicPath}`+'pets/dogs/1/1.jfif'" alt="Dogs">
                 <div class="card-body">
-                    <h5 class="card-title">Dogs</h5>
+                    <h5 class="card-title" v-if="currentLang == 'sr'">Psi</h5>
+                    <h5 v-else>Dogs</h5>
                     </div>
                 </a>
             </div>
@@ -13,7 +14,8 @@
                 <a href="/animals/cat/">
                 <img class="card-img-top" :src="`${publicPath}`+'pets/cats/5/3.jfif'" alt="Cats">
                 <div class="card-body">
-                    <h5 class="card-title">Cats</h5>
+                    <h5 class="card-title" v-if="currentLang == 'sr'">Mačke</h5>
+                    <h5 v-else>Cats</h5>
                    </div>
                 </a>
             </div>
@@ -21,7 +23,8 @@
                 <a href="/animals/bird/">
                 <img class="card-img-top" :src="`${publicPath}`+'pets/birds/8/3.jfif'" alt="Birds">
                 <div class="card-body">
-                    <h5 class="card-title">Birds</h5>
+                    <h5 class="card-title" v-if="currentLang == 'sr'">Ptice</h5>
+                    <h5 v-else>Birds</h5>
                     </div>
                 </a>
             </div>
@@ -46,7 +49,11 @@ export default {
     data(){
         return{
             publicPath: process.env.BASE_URL,
+            currentLang: ''
         }
+    },
+    created(){
+            this.currentLang = localStorage.getItem("lang");
     }
 }
 </script>

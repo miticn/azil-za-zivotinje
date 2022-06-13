@@ -1,6 +1,6 @@
 const AdPageLang = {
     en: {
-        title: 'Ad your ad',
+        title: 'Add your ad',
         name: "Pet's name: ",
         desc: 'Description: ',
         phone: 'Phone number: ',
