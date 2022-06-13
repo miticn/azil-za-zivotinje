@@ -1,11 +1,21 @@
 <template>
     <div>
-        <h1>{{this.type}}</h1>
-        <label for="sort">Sort:</label>
-        <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
-            <option>Age</option>
-            <option>Name</option>
-        </select>
+        <h1>{{this.grouptitle}}</h1>
+        <div v-if="currentLang=='en'">
+            <label for="sort">Sort:</label>
+            <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
+                <option>Age</option>
+                <option>Name</option>
+            </select>
+        </div>
+        <div v-else>
+            <label for="sort">Sortiraj:</label>
+            <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
+                <option>Starost</option>
+                <option>Ime</option>
+            </select>
+        </div>
+        
         <div class="row row-cols-4 d-flex justify-content-center">
 
                 <div class="col card mr-0" v-for="myAnimal in myAnimals" :key="myAnimal.id">
@@ -13,7 +23,8 @@
                     <img class="card-img-top" :src="`${publicPath}`+myAnimal.path+myAnimal.gallery[0]" alt="dog.name">
                     <div class="card-body">
                         <h5 class="card-title">{{myAnimal.name}}</h5>
-                        <p class="card-text">{{myAnimal.desc.slice(0,100)+'...'}}</p>
+                        <p v-if="this.currentLang=='en'" class="card-text">{{myAnimal.desc_en.slice(0,100)+'...'}}</p>
+                        <p v-else class="card-text">{{myAnimal.desc_sr.slice(0,100)+'...'}}</p>
                     </div>
                     </a>
                 </div>
@@ -43,15 +54,20 @@ import animals from "../data/animals.js"
           type:'',
           sort:'',
           myAnimals:[],
-          trigger:''
+          trigger:'',
+          currentLang:'',
+          grouptitle:''
       }
     },
     created(){
+        this.currentLang = localStorage.getItem("lang");
         this.type = this.$route.params.type;
         this.allAnimals=animals;
         for(let i=0; i<this.allAnimals.length; i++){
             if(this.allAnimals[i]['group']==this.type){
                 this.myAnimals.push(this.allAnimals[i]);
+                if(this.currentLang == 'sr')this.grouptitle=this.allAnimals[i]['group_sr'];
+                else this.grouptitle=this.allAnimals[i]['group'];
             }
         }
     },

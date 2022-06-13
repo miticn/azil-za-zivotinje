@@ -25,14 +25,20 @@
 <div class="row">
     <div class="col col-sm-8 offset-2">
         <div class="details">
-        <h5>Name: </h5>
+        <h5 v-if="this.currentLang=='en'">Name: </h5>
+        <h5 v-else>Ime: </h5>
         <p>{{this.myAnimal.name}}</p>
-        <h5>Description: </h5>
-        <p>{{this.myAnimal.desc}}</p>
-        <h5>Weight: </h5>
+        <h5 v-if="this.currentLang=='en'">Description: </h5>
+        <h5 v-else>Opis: </h5>
+        <p v-if="this.currentLang=='en'">{{this.myAnimal.desc_en}}</p>
+        <p v-else>{{this.myAnimal.desc_sr}}</p>
+        <h5 v-if="this.currentLang=='en'">Weight: </h5>
+        <h5 v-else>Težina: </h5>
         <p>{{this.myAnimal.weight}}</p>
-        <h5>Age: </h5>
-        <p>{{this.myAnimal.age}} years old</p>
+        <h5 v-if="this.currentLang=='en'">Age: </h5>
+        <h5 v-else>Starost: </h5>
+        <p v-if="this.currentLang=='en'">{{this.myAnimal.age}} years old</p>
+        <p v-else>{{this.myAnimal.age}} godina</p>
         </div>
     </div>
     
@@ -84,9 +90,11 @@ import animals from "../data/animals.js"
         data(){
         return{
             publicPath: process.env.BASE_URL,
-            myAnimal:''
+            myAnimal:'',
+            currentLang:''
         }
         },created(){
+            this.currentLang = localStorage.getItem("lang");
             let allAnimals=animals;
             this.myAnimal= allAnimals.find(animal=>animal.id==this.$route.params.id);
         }
