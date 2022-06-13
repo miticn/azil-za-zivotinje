@@ -2,17 +2,18 @@
 <template>
   <nav>
     <ol class="breadcrumb">
+      &emsp;
       <li
         v-for="(crumb, ci) in crumbs" :key="ci" class="breadcrumb-item align-items-center">
         <button class="btn btn-link" :class="{ disabled: isLast(ci) }" @click="selected(crumb)">
-          {{ crumb }}
+           {{ crumb }}
         </button>
       </li>
     </ol>
   </nav>
 </template>
 <style scoped>
-    .btn-link{
+    button.btn-link{
         background-color: transparent;
         border:0;
     }
