@@ -30,7 +30,12 @@
                 <td colspan="2"><button class="add" @click="addAds()"><b>{{adpagelang.add}}</b></button></td>
             </tr>
             <tr>
-                <td colspan="2"><br></td>
+                <td colspan="2">
+                    <span class="error">
+                        <h3  v-if="currentLang=='sr'">{{this.errormsgsr}}</h3>
+                        <h3 v-else>{{this.errormsgen}}</h3>
+                        </span>
+                    </td>
             </tr>
         </table>
         </div>
@@ -54,6 +59,9 @@
         margin-bottom: 10px;
         border:solid;
     }
+    .error{
+        color: red;
+    }
 </style>
 
 <script>
@@ -68,18 +76,27 @@
             description: '',
             allads: [],
             currentLang: '',
-            adpagelang: ''
+            adpagelang: '',
+            errormsgsr:'',
+            errormsgen:'',
+            phone:''
             }
         },
         methods: {
             addAds(){
-                this.allads.push({'id':this.currId, 'user': 'myUser', 'title': this.title, 'phone': this.phone, 'description': this.description})
-                localStorage.setItem('allAds', JSON.stringify(this.allads))
-                
-                this.currId=parseInt(this.currId)+1;
-                localStorage.setItem('currId', this.currId)
+                if(this.title == '' || this.phone == '' || this.description == ''){
+                    this.errormsgsr='Popunite sva polja!';
+                    this.errormsgen='Fill in all the fields!';
+                }
+                else{
+                    this.allads.push({'id':this.currId, 'user': 'myUser', 'title': this.title, 'phone': this.phone, 'description': this.description})
+                    localStorage.setItem('allAds', JSON.stringify(this.allads))
+                    
+                    this.currId=parseInt(this.currId)+1;
+                    localStorage.setItem('currId', this.currId)
 
-                this.$router.push('adadded')
+                    this.$router.push('adadded')
+                }
             }
         },
         created(){
@@ -93,6 +110,8 @@
             }
             this.currId=localStorage.getItem('currId')
             
+            this.errormsg = '';
+
             this.currentLang = localStorage.getItem("lang");
             this.adpagelang = AdPageLang[this.currentLang];
         }
