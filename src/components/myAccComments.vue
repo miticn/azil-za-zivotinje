@@ -1,30 +1,18 @@
 <template>
-    <div class="allcomments" v-if="this.ida!=-1">
+    <div class="allcomments">
         <div v-for="comment in myComments" :key="comment.oglas">
             <h4>{{comment.user}}</h4>
             <p>{{comment.comment}}</p>
             <hr>
         </div>
         <h1 v-if="this.myComments.length==0">Nema Komentara</h1>
-        <form>
-            <textarea name="commentInput" cols="40" rows="3" v-model="comment"></textarea>
-            <button class="btn send" @click="addComment()">Send</button>
-        </form>
     </div>
     
 </template>
 
 <style scoped>
 .allcomments{
-    background-color:white;
-    border-right: solid;
-    border-top: solid;
-    border-bottom: solid;
-    border-left: solid;
-    border-left-color: lightgray;
-    border-left-width: thin;
-    height: 100%;
-    overflow-y: scroll;
+    
 }
 p{
     text-align: left;
@@ -44,24 +32,16 @@ h4{
 import comments from '../data/comments.js';
 export default {
 
-    name: 'AllComments',
+    name: 'myAccComments',
     props: {
-        ida:{
-            default: '-1'
-        },
-        user:{
-            default:'myUser'
-        },
-        comment:{
-            default:''
-        }
 
     },
     data(){
         return{
             comment:'',
             comments:'',
-            myComments: []
+            myComments: [],
+            user:'myUser'
         }
     },
     created(){
@@ -69,9 +49,14 @@ export default {
             localStorage.setItem('comments', JSON.stringify(comments))
         }
         this.comments=JSON.parse(localStorage.getItem('comments'))
+    
+
+        for(let i = 0; i< this.comments.length; i++)
+            if(this.comments[i].user==this.user){
+                this.myComments.push(this.comments[i]);
+            }
     },
     methods:{
-
     }
 }
 </script>

@@ -11,6 +11,7 @@
             </div>
             <h1 v-if="currentLang=='sr'">Komentari: </h1>
             <h1 v-else>Comments: </h1>
+            <myAccComments></myAccComments>
         </div>
     </div>
 </div>
@@ -19,8 +20,9 @@
 <script>
     import OneAd from "../components/OneAd.vue"
     import allAds from "../data/ads.js"
+    import myAccComments from '../components/myAccComments.vue'
     export default {
-        components: { OneAd },
+        components: { OneAd,myAccComments },
         data(){
             return{
                 allAds:'',
