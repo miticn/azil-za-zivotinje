@@ -1,20 +1,26 @@
 <template>
     <br>
-    <div class="container">
-        <div class="row">
-                <div id="ads" class="col col-sm-8 mr-0 pr-0">
-                    <div v-for="ad in allads" :key="ad.user">
-                        <one-ad :class="(this.ida==ad.id)?'selected':''" :id="ad.id" @click="showComments(ad.id)" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+    <div id="frame">
+        <div class="container">
+            <div class="row">
+                    <div id="ads" class="col col-sm-8 mr-0 pr-0">
+                        <div v-for="ad in allads" :key="ad.user">
+                            <one-ad :class="(this.ida==ad.id)?'selected':''" :id="ad.id" @click="showComments(ad.id)" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+                        </div>
                     </div>
-                </div>
-                <div id="comments" class="col col-sm-4 pl-0 comments">
-                    <AllComments :key="ida" :ida="ida"></AllComments>
-                </div>
+                    <div id="comments" class="col col-sm-4 pl-0 comments">
+                        <AllComments :key="ida" :ida="ida"></AllComments>
+                    </div>
+            </div>
         </div>
     </div>
+    
     <br><br>
 </template>
 <style scoped>
+    #frame{
+        height: 75vh;
+    }
     .selected{
         background-color: white;
         border-right: none !important;
