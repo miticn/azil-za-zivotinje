@@ -24,13 +24,19 @@ export default {
       type: Array,
       required: true,
     },
+    routes:{
+      type: Array,
+      required: true,
+    }
   },
   methods: {
     isLast(index) {
       return index === this.crumbs.length - 1;
     },
     selected(crumb) {
-      this.$emit('selected', crumb);
+      let index = this.crumbs.indexOf(crumb);
+      //this.$emit('selected', crumb);
+      this.$router.push(this.routes[index]);
     },
   },
 };

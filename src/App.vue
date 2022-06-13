@@ -42,7 +42,7 @@
     </div>
   </nav>
  </div>
-  <BreadCrumbs class="row justify-content-center mt-4" :crumbs="crumbs" @selected="selected"/>
+  <BreadCrumbs class="row justify-content-center mt-4" :routes="routes" :crumbs="crumbs" @selected="selected"/>
 
   <router-view/>
   <div id="banner-div">
@@ -155,14 +155,17 @@ a.dropdown-toggle:active{
       return{
         currentLang:'',
         mylangData:'',
-        crumbs: ['Home','test'],
+        crumbs: [],
+        routes: []
       }
     },
     updated(){
       this.crumbs = this.$route['meta']['crumbs'];
+      this.routes = this.$route['path']
       if(this.$route['path'].startsWith('/animals') && (this.$route['path']!='/animals'||this.$route['path']!='/animals/')){
           if(this.$route['path'].includes('dog')){
-            this.crumbs = ['Animal Groups', 'Dogs']
+            this.crumbs = ['Animal Groups', 'Dogs'];
+            this.routes = [];
           }
           if(this.$route['path'].includes('cat')){
             this.crumbs = ['Animal Groups', 'Cats']
