@@ -4,7 +4,7 @@
     <ol class="breadcrumb">
       &emsp;
       <li
-        v-for="(crumb, ci) in crumbs" :key="ci" class="breadcrumb-item align-items-center">
+        v-for="(crumb, ci) in crumbs" :key="ci" class="breadcrumb-item align-items-center li-type">
         <button class="btn btn-link" :class="{ disabled: isLast(ci) }" @click="selected(crumb)">
            {{ crumb }}
         </button>
@@ -48,5 +48,10 @@ export default {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.37rem;
+}
+li.li-type:before {
+  content: ">";
+  float:none;
+  padding-right: 2px;
 }
 </style>
