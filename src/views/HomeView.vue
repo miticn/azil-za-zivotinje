@@ -9,8 +9,8 @@
                 <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
                 <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
               </svg>
-              <h5 v-if="currentLang == 'sr'">Izgubio/la si ljubimca?</h5>
-              <h5 v-else>You lost a pet?</h5>
+              <h6 v-if="currentLang == 'sr'">Izgubio/la si ljubimca?</h6>
+              <h6 v-else>You lost a pet?</h6>
             </button>
           </router-link>
           <router-link to="/lostpets" class="nav-item nav-link mx-auto">
@@ -21,8 +21,8 @@
                 <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
               </svg>
               <div>
-              <h5 v-if="currentLang == 'sr'">Izgubljeni ljubimci</h5>
-              <h5 v-else>Lost pets</h5></div>
+              <h6 v-if="currentLang == 'sr'">Izgubljeni ljubimci</h6>
+              <h6 v-else>Lost pets</h6></div>
             </button>
           </router-link>
 

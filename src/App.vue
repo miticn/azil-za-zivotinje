@@ -75,7 +75,7 @@ router-link.nav-item{
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 23px;
+  height: auto;
   text-align: center;
   background-color: #2e2044;
 }
