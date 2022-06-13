@@ -1,17 +1,17 @@
 <template>
         <div id="ad-table-div">
-            <h1>{{adpagelang.title}}</h1>
+            <h1><b>{{adpagelang.title}}</b></h1>
             <br>
             <table id="ad-table">
             <tr>
-                <td>{{adpagelang.name}}</td>
+                <td><b>{{adpagelang.name}}</b></td>
                 <td> <input type="text" name="title" v-model="title"> </td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td>{{adpagelang.desc}}</td>
+                <td><b>{{adpagelang.desc}}</b></td>
             </tr>
             <tr>
                 <td colspan="2"> <textarea name="description" id="" cols="50" rows="10" v-model="description"></textarea> </td>
@@ -20,14 +20,14 @@
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td>{{adpagelang.phone}}</td>
+                <td><b>{{adpagelang.phone}}</b></td>
                 <td> <input type="text" name="title" v-model="phone"> </td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td colspan="2"><button class="add" @click="addAds()">{{adpagelang.add}}</button></td>
+                <td colspan="2"><button class="add" @click="addAds()"><b>{{adpagelang.add}}</b></button></td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
