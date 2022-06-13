@@ -1,5 +1,5 @@
 <template>
-<div>{{ $route.params.id }}</div>
+<!--<div>{{ $route.params.id }}</div>-->
 <div class="row carousel-row">
     <button id="cb" class="carousel-control-prev carousel-dark col col-sm-1 col-1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -19,12 +19,28 @@
     </button>
 
 </div>
+<div class="row">
+    <div class="col col-sm-8 offset-2">
+        <div class="details">
+        <h5>Name: </h5>
+        <p>{{this.myAnimal.name}}</p>
+        <h5>Description: </h5>
+        <p>{{this.myAnimal.desc}}</p>
+        <h5>Weight: </h5>
+        <p>{{this.myAnimal.weight}}</p>
+        <h5>Age: </h5>
+        <p>{{this.myAnimal.age}} years old</p>
+        </div>
+    </div>
+    
+</div>
 </template>
 
 <style scoped>
 .carousel-row{
     max-height: 85vh;
     width: auto;
+    background-color: white;
 
 }
 .carousel,.item,.active {
@@ -39,6 +55,16 @@
     position: absolute;
     background-color :transparent;
     position: relative !important;
+}
+.details{
+    border:solid;
+    border-color:#2e2044;
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+}
+h5{
+    font-weight: bold;
 }
 
 </style>
