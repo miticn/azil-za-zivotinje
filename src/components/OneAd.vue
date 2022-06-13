@@ -31,6 +31,9 @@ import jsPDF from 'jspdf'
 export default {
     name: 'OneAd',
     props: {
+        id:{
+            default:''
+        },
         title:{
             default: ''
         },
@@ -57,6 +60,7 @@ export default {
             localStorage.setItem('allAds', JSON.stringify(allAds))
         }
         this.allads=JSON.parse(localStorage.getItem('allAds'))
+        this.comments=JSON.parse(localStorage.getItem('comments'))
     },
     methods:{
         savePDF(){
@@ -80,6 +84,8 @@ export default {
         deletePDF(){
             this.allads=this.allads.filter(val => val.title != this.title)
             localStorage.setItem('allAds', JSON.stringify(this.allads))
+            this.comments = this.comments.filter(val => val.id != this.id)
+            localStorage.setItem('comments', JSON.stringify(this.comments))
             this.$router.go()
         }
     }
