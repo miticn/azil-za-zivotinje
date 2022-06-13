@@ -12,16 +12,8 @@
         height: auto;
     }
     #headerbar{
-        color: #f7bc70;
         display: flex;
-        background-color: #2e2044 ;
-        text-align: center;
-    }
-    h1{
-        position: absolute;
-        top: 50px;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        align-items: center;
     }
     h1{
         margin-left:0;
