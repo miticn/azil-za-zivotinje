@@ -73,7 +73,6 @@ import animals from "../data/animals.js"
     },
     methods:{
         sortAnimals(){
-            alert(1);
             function compareName( a, b ) {
                 if ( a.name.toLowerCase() < b.name.toLowerCase() ){
                     return -1;

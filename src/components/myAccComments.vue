@@ -1,18 +1,24 @@
 <template>
+    <a href="/lostpets">
     <div class="allcomments">
-        <div v-for="comment in myComments" :key="comment.oglas">
+        <div v-for="comment in myComments" :key="comment.id">
             <h4>{{comment.user}}</h4>
             <p>{{comment.comment}}</p>
+            <p>Naslov teme: {{this.idOglas2title[comment.id]}}</p>
             <hr>
         </div>
         <h1 v-if="this.myComments.length==0">Nema Komentara</h1>
     </div>
+    </a>
     
 </template>
 
 <style scoped>
 .allcomments{
-    
+    border-left:solid;
+    border-right:solid;
+    border-top:solid;
+    border-width: thin;
 }
 p{
     text-align: left;
@@ -34,14 +40,16 @@ export default {
 
     name: 'myAccComments',
     props: {
-
+        allAds:{
+            default:[]
+        }
     },
     data(){
         return{
-            comment:'',
             comments:'',
             myComments: [],
-            user:'myUser'
+            user:'myUser',
+            idOglas2title:[]
         }
     },
     created(){
@@ -54,6 +62,8 @@ export default {
         for(let i = 0; i< this.comments.length; i++)
             if(this.comments[i].user==this.user){
                 this.myComments.push(this.comments[i]);
+                let ind = this.allAds.findIndex(ad=>this.comments[i].id==ad.id)
+                this.idOglas2title[parseInt(this.comments[i].id)]=this.allAds[ind].title;
             }
     },
     methods:{

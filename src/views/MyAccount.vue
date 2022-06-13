@@ -13,7 +13,7 @@
             </div>
             <h1 v-if="currentLang=='sr'">Komentari: </h1>
             <h1 v-else>Comments: </h1>
-            <myAccComments></myAccComments>
+            <myAccComments :allAds="this.allads" ></myAccComments>
         </div>
         <div class="col col-sm-2">
       </div>
