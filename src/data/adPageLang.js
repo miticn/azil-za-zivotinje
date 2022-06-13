@@ -2,18 +2,18 @@ const AdPageLang = {
     en: {
         title: 'Ad your ad',
         name: "Pet's name: ",
-        desc: 'Description',
+        desc: 'Description: ',
         phone: 'Phone number: ',
-        add: 'Add',
+        add: 'ADD',
         added: 'Your Ad is successfuly added!',
         check: 'Check it out!'
     },
     sr: {
         title: 'Postavi oglas',
         name: "Naziv ljubimca: ",
-        desc: 'Opis',
+        desc: 'Opis: ',
         phone: 'Broj telefona: ',
-        add: 'Postavi',
+        add: 'POSTAVI',
         added: 'Vaš oglas je uspešno postavljen!',
         check: 'Čekirajte oglas!'
     }

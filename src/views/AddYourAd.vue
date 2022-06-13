@@ -21,14 +21,14 @@
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td>{{adpagelang.desc}}</td>
+                <td>{{adpagelang.phone}}</td>
                 <td> <input type="text" name="title" v-model="phone"> </td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td colspan="2"><button @click="addAds()">{{adpagelang.add}}</button></td>
+                <td colspan="2"><button class="add" @click="addAds()">{{adpagelang.add}}</button></td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
@@ -40,11 +40,15 @@
 <style>
     #ad-table-div{
         background-color: #ebeff2 ;
-        height: 100vh;
     }
     #ad-table{
         margin-left: auto;
         margin-right: auto;
+    }
+    .add{
+        background-color:#f7bc70;
+        margin-bottom: 10px;
+        border:solid;
     }
 </style>
 
