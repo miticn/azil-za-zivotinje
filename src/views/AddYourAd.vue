@@ -64,9 +64,11 @@
             addAds(){
                 this.allads.push({'id':this.currId, 'user': 'myUser', 'title': this.title, 'phone': this.phone, 'description': this.description})
                 localStorage.setItem('allAds', JSON.stringify(this.allads))
-                this.$router.push('adadded')
+                
                 this.currId=parseInt(this.currId)+1;
                 localStorage.setItem('currId', this.currId)
+
+                this.$router.push('adadded')
             }
         },
         created(){
