@@ -70,6 +70,8 @@ import animals from "../data/animals.js"
                 else this.grouptitle=this.allAnimals[i]['group'];
             }
         }
+        if(this.currentLang != 'sr')
+            this.grouptitle = this.grouptitle.charAt(0).toUpperCase() + this.grouptitle.slice(1)+'s';
     },
     methods:{
         sortAnimals(){
