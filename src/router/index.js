@@ -6,6 +6,7 @@ import AllAnimals from '../views/AllAnimals.vue'
 import OneAnimal from '../views/OneAnimal.vue'
 import LostPets from '../views/LostPets.vue'
 import AnimalGroups from '../views/AnimalGroups.vue'
+import MyAccount from '../views/MyAccount.vue'
 
 const routes = [
   {
@@ -42,7 +43,7 @@ const routes = [
   {
     path: '/myaccount',
     name: 'My account',
-    component: ''
+    component: MyAccount
   },
   {
     path: '/about',
