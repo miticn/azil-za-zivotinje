@@ -1,18 +1,18 @@
 <template>
         <div id="ad-table-div">
             <br>
-            <h1>POSTAVI OGLAS</h1>
+            <h1>{{adpagelang.title}}</h1>
             <br>
             <table id="ad-table">
             <tr>
-                <td>Naziv ljubimca: </td>
+                <td>{{adpagelang.name}}</td>
                 <td> <input type="text" name="title" v-model="title"> </td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td>Opis: </td>
+                <td>{{adpagelang.desc}}</td>
             </tr>
             <tr>
                 <td colspan="2"> <textarea name="description" id="" cols="50" rows="10" v-model="description"></textarea> </td>
@@ -21,14 +21,14 @@
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td>Broj telefona: </td>
+                <td>{{adpagelang.desc}}</td>
                 <td> <input type="text" name="title" v-model="phone"> </td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
             </tr>
             <tr>
-                <td colspan="2"><button @click="addAds()">Postavi oglas!</button></td>
+                <td colspan="2"><button @click="addAds()">{{adpagelang.add}}</button></td>
             </tr>
             <tr>
                 <td colspan="2"><br></td>
@@ -49,6 +49,7 @@
 </style>
 
 <script>
+    import AdPageLang from '../data/adPageLang.js'
     import allAds from '../data/ads.js'
     export default{
         name: 'AddYourAdd',
@@ -57,7 +58,9 @@
             currId:0,
             title: '',
             description: '',
-            allads: []
+            allads: [],
+            currentLang: '',
+            adpagelang: ''
             }
         },
         methods: {
@@ -81,6 +84,9 @@
                 localStorage.setItem('currId', allAds.length)
             }
             this.currId=localStorage.getItem('currId')
+            
+            this.currentLang = localStorage.getItem("lang");
+            this.adpagelang = AdPageLang[this.currentLang];
         }
     }
 </script>
