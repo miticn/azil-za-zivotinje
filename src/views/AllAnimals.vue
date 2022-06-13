@@ -1,6 +1,8 @@
 <template>
-    <div>
+    <div id="mainframe">
+        <br>
         <h1>{{this.grouptitle}}</h1>
+        <br>
         <div v-if="currentLang=='sr'">
         <label for="sort">Sortiraj:</label>
             <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
@@ -15,7 +17,7 @@
                 <option>Name</option>
             </select>
         </div>
-        <br>
+        <br><br>
         <div class="row row-cols-4 d-flex justify-content-center">
 
                 <div class="col card mr-0" v-for="myAnimal in myAnimals" :key="myAnimal.id">
@@ -40,6 +42,9 @@
         /*min-height: 40vw;*/
         height: auto;
         position: relative; 
+    }
+    #mainframe{
+        height: 100vh;
     }
 </style>
 
