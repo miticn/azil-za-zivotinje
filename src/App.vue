@@ -141,7 +141,40 @@ a.dropdown-toggle:active{
         $route: {
             immediate: true,
             handler(to) {
-                document.title = 'Sigurna kućica' + ((to.meta.title != null)?(' | '+to.meta.title):'');
+                if(this.currentLang!='sr')
+                  document.title = 'Sigurna kućica' + ((to.meta.title != null)?(' | '+to.meta.title):'');
+                else
+                  document.title = 'Sigurna kućica' + ((to.meta.title_sr != null)?(' | '+to.meta.title_sr):'');
+                if(this.$route['name']=='One Animal'){
+                  let id = this.$route.params.id;
+                  let animal = animals.find(animal=>animal.id==id);
+                  document.title = 'Sigurna kućica | ' + animal.name;
+                } else if(this.$route['name']=='All animal types'){
+                  switch(this.$route.params.type){
+                  case 'cat':
+                    if(this.currentLang=='sr')
+                      document.title = 'Sigurna kućica | Mačke';
+                    else
+                      document.title = 'Sigurna kućica | Cats';
+                    break;
+                  case 'dog':
+                    if(this.currentLang=='sr')
+                      document.title = 'Sigurna kućica | Psi';
+                    else
+                      document.title = 'Sigurna kućica | Dogs';
+                    break;
+                  
+                  case 'bird':
+                    if(this.currentLang=='sr')
+                      document.title = 'Sigurna kućica | Ptice';
+                    else
+                      document.title = 'Sigurna kućica | Birds';
+                    break;
+                  
+                  }
+                }
+
+
             }
         },
     },
@@ -160,19 +193,31 @@ a.dropdown-toggle:active{
       }
     },
     updated(){
-      this.crumbs = this.$route['meta']['crumbs'];
+      if(this.currentLang!='sr')
+        this.crumbs = this.$route['meta']['crumbs'];
+      else
+        this.crumbs = this.$route['meta']['crumbs_sr'];
       this.routes = this.$route['path']
       if(this.$route['path'].startsWith('/animals') && (this.$route['path']!='/animals'||this.$route['path']!='/animals/')){
           if(this.$route['path'].includes('dog')){
-            this.crumbs = ['Animal Groups', 'Dogs'];
+            if(this.currentLang!='sr')
+              this.crumbs = ['Animal Groups', 'Dogs'];
+            else
+              this.crumbs = ['Grupe Životinja', 'Psi'];
             this.routes = ['/animals/',this.$route['path']];
           }
           if(this.$route['path'].includes('cat')){
-            this.crumbs = ['Animal Groups', 'Cats'];
+            if(this.currentLang!='sr')
+              this.crumbs = ['Animal Groups', 'Cats'];
+            else
+              this.crumbs = ['Grupe Životinja', 'Mačke'];
             this.routes = ['/animals/',this.$route['path']];
           }
           if(this.$route['path'].includes('bird')){
-            this.crumbs = ['Animal Groups', 'Birds'];
+            if(this.currentLang!='sr')
+              this.crumbs = ['Animal Groups', 'Birds'];
+            else
+              this.crumbs = ['Grupe Životinja', 'Ptice'];
             this.routes = ['/animals/',this.$route['path']];
           }
           if(this.$route['name']=='One Animal'){
@@ -183,7 +228,10 @@ a.dropdown-toggle:active{
           }
         
       }else {
-        this.crumbs = this.$route['meta']['crumbs'];
+        if(this.currentLang!='sr')
+          this.crumbs = this.$route['meta']['crumbs'];
+        else
+          this.crumbs = this.$route['meta']['crumbs_sr'];
       }
     },
     created(){

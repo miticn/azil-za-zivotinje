@@ -13,13 +13,15 @@ const routes = [
     path: '/',
     name: 'Home',
     component: HomeView,
-    meta: { title: 'Home', crumbs:['Home'] }
+    meta: { title: 'Home', crumbs:['Home'],
+    title_sr: 'Početna', crumbs_sr:['Početna'] },
   },
   {
     path: '/animals',
     name: 'Animals',
     component: AnimalGroups,
-    meta: { title: 'Animal Groups', crumbs:['Animal Groups'] }
+    meta: { title: 'Animal Groups', crumbs:['Animal Groups'],
+    title_sr: 'Grupe Životinja', crumbs_sr:['Grupe Životinja'] },
   },
   {
     path: '/animals/:type',
@@ -36,24 +38,28 @@ const routes = [
     path: '/lostpets',
     name: 'Lost Pets',
     component: LostPets,
-    meta: { title: 'Lost Pets', crumbs:['Lost Pets'] }
+    meta: { title: 'Lost Pets', crumbs:['Lost Pets'],
+    title_sr: 'Izgubljene životinje', crumbs_sr:['Izgubljene životinje']  }
   },
   {
     path: '/addyourad',
     name: 'Add Your Ad',
     component: AddYourAd,
-    meta: { title: 'Add your ad', crumbs:['Add your ad'] }
+    meta: { title: 'Add your ad', crumbs:['Add your ad'],
+    title_sr: 'Dodaj oglas', crumbs_sr:['Dodaj oglas']  }
   },
   {
     path: '/myaccount',
     name: 'My account',
     component: MyAccount,
-    meta: { title: 'My account', crumbs:['My account'] }
+    meta: { title: 'My account', crumbs:['My account'], 
+    title_sr: 'Moj nalog', crumbs_sr:['Moj nalog']}
   },
   {
     path: '/about',
     name: 'About',
-    meta: { title: 'About', crumbs:['About'] },
+    meta: { title: 'About', crumbs:['About'],
+    title_sr: 'O nama', crumbs_sr:['O nama']  },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
