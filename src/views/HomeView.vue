@@ -1,7 +1,7 @@
 <template>
   <div class="home">
      <div class="row">
-       <div class="col col-sm-6 col-12">
+       <div class="col col-md-6 col-12" id="pad">
           <h1 class="align-middle pt-5 pb-5">{{mylangData.title}}</h1>
           <router-link to="/addyourad" class="nav-item nav-link mx-auto">
             <button class="btn btn-lg btn-1 text-wrap">
@@ -27,7 +27,7 @@
           </router-link>
 
        </div>
-       <div class="col col-sm-6 col-12">
+       <div class="col col-md-6 col-12">
         <img src="../assets/lara.jpg" alt="">
        </div>
      </div>
@@ -81,6 +81,9 @@
     display:inline;
   }
 
+  #pad{
+    padding-bottom: 10px;
+  }
 </style>
 
 <script>
