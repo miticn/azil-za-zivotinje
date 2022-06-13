@@ -6,7 +6,7 @@
             <h1 v-else>Ads: </h1>
             <div v-for="ad in allads" :key="ad.user">
                 <div v-if="ad.user == 'myUser'">
-                    <one-ad :id="ad.id" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad>
+                    <one-ad :id="ad.id" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user" :del=true></one-ad>
                 </div>
             </div>
             <h1 v-if="currentLang=='sr'">Komentari: </h1>
