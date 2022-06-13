@@ -1,8 +1,8 @@
 <template>
     <div>
         <h1>Psi</h1>
-        <div class="row row-cols-4">
-            
+        <div class="row row-cols-4 d-flex justify-content-center">
+
                 <div class="col card mr-0" v-for="myAnimal in myAnimals" :key="myAnimal.id">
                     <a :href="'/animals/'+type+'/'+myAnimal.id">
                     <img class="card-img-top" :src="`${publicPath}`+myAnimal.path+myAnimal.gallery[0]" alt="dog.name">

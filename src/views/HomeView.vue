@@ -96,9 +96,9 @@ export default {
 
       if(localStorage.getItem('allAds')==null){
             localStorage.setItem('allAds', JSON.stringify(allAds))
-        }
-        this.allads=JSON.parse(localStorage.getItem('allAds'))
-        this.allads= this.allads.slice(0,3);
+      }
+      this.allads=JSON.parse(localStorage.getItem('allAds'))
+      this.allads= this.allads.slice(0,3);
     },
 }
 </script>
