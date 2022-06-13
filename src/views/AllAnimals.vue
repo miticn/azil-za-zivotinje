@@ -8,7 +8,7 @@
                     <img class="card-img-top" :src="`${publicPath}`+myAnimal.path+myAnimal.gallery[0]" alt="dog.name">
                     <div class="card-body">
                         <h5 class="card-title">{{myAnimal.name}}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">{{myAnimal.desc.slice(0,100)+'...'}}</p>
                     </div>
                     </a>
                 </div>
