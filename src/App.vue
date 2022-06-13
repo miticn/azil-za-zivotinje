@@ -129,6 +129,7 @@ a.dropdown-toggle:active{
 </style>
 
 <script>
+  import animals from "./data/animals.js"
   import BreadCrumbs from "./components/BreadCrumbs.vue"
   import Footer from './components/Footer.vue'
   import Header from './components/Header.vue'
@@ -158,8 +159,26 @@ a.dropdown-toggle:active{
       }
     },
     updated(){
-      //let routes = this.$route['path'].split('/');
-      this.crumbs = [this.$route.name];
+      this.crumbs = this.$route['meta']['crumbs'];
+      if(this.$route['path'].startsWith('/animals') && (this.$route['path']!='/animals'||this.$route['path']!='/animals/')){
+          if(this.$route['path'].includes('dog')){
+            this.crumbs = ['Animal Groups', 'Dogs']
+          }
+          if(this.$route['path'].includes('cat')){
+            this.crumbs = ['Animal Groups', 'Cats']
+          }
+          if(this.$route['path'].includes('bird')){
+            this.crumbs = ['Animal Groups', 'Birds']
+          }
+          if(this.$route['name']=='One Animal'){
+            let id = this.$route.params.id;
+            let animal = animals.find(animal=>animal.id==id);
+            this.crumbs[2] = animal.name;
+          }
+        
+      }else {
+        this.crumbs = this.$route['meta']['crumbs'];
+      }
     },
     created(){
       this.currentLang = localStorage.getItem("lang");
@@ -168,6 +187,9 @@ a.dropdown-toggle:active{
         this.currentLang = "sr";
       }
       this.mylangData = fullLangData[this.currentLang];
+
+
+
     },
     methods:{
       changeLang(lan){
