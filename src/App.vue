@@ -28,7 +28,9 @@
   <BreadCrumbs class="row justify-content-center mt-4" :crumbs="crumbs" @selected="selected"/>
 
   <router-view/>
-
+  <div id="banner-div">
+      <Banner></Banner>
+  </div>
   <div id="footer-div">
     <Footer></Footer>
   </div>
@@ -58,6 +60,12 @@ router-link.nav-item{
   width: 100%;
   height: 23px;
   text-align: center;
+  background-color: #2e2044;
+}
+#banner-div {
+  width: 100%;
+  padding-block: 10px;
+  background-color: #2e2044;
 }
 nav a.router-link-exact-active {
   color: #2e2044  !important;
@@ -85,6 +93,7 @@ a, a:hover{
   import BreadCrumbs from "./components/BreadCrumbs.vue"
   import Footer from './components/Footer.vue'
   import Header from './components/Header.vue'
+  import Banner from './components/Banners.vue'
   import fullLangData from "./data/nav.js"
   export default {
     name: 'App',
@@ -99,7 +108,8 @@ a, a:hover{
     components: {
       Footer,
       Header,
-      BreadCrumbs
+      BreadCrumbs,
+      Banner
     },
     data(){
       return{

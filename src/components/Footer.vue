@@ -10,9 +10,6 @@
 i{
     color: #eccfc9
 }
-    #footerbar{
-        background-color: #2e2044;
-    }
 </style>
 
 <script>
