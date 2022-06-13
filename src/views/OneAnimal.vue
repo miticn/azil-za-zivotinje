@@ -41,17 +41,17 @@
 
 <style scoped>
 .carousel-row{
-    max-height: 85vh;
+    max-height: 80vh;
     width: auto;
     background-color: white;
 
 }
 .carousel,.item,.active {
-   height:85vh;
+   height:80vh;
    width: auto;
  }
 .carousel-inner .carousel-indicators{
-    height:85vh;
+    height:80vh;
     width: auto;
 }
 #cb{
