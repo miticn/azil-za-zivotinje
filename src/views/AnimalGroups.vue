@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="main-div">
         <div class="row row-cols-4">
             <div class="col card mr-0 ">
                 <a href="/animals/dog/">
@@ -35,6 +35,9 @@
     .card-img-top{
         width:100%;
         height: auto;
+    }
+    #main-div{
+        height: 100vh;
     }
 </style>
 <script>
