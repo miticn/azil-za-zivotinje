@@ -13,17 +13,19 @@ const routes = [
     path: '/',
     name: 'Home',
     component: HomeView,
-    meta: { title: 'Home' }
+    meta: { title: 'Home', crumbs:['Home'] }
   },
   {
     path: '/animals',
     name: 'Animals',
-    component: AnimalGroups
+    component: AnimalGroups,
+    meta: { title: 'Animal Groups', crumbs:['Animal Groups'] }
   },
   {
     path: '/animals/:type',
-    name: 'Animal',
-    component: AllAnimals
+    name: 'All animal types',
+    component: AllAnimals,
+    
   },
   {
     path: '/animals/:type/:id',
@@ -33,21 +35,25 @@ const routes = [
   {
     path: '/lostpets',
     name: 'Lost Pets',
-    component: LostPets
+    component: LostPets,
+    meta: { title: 'Lost Pets', crumbs:['Lost Pets'] }
   },
   {
     path: '/addyourad',
     name: 'Add Your Ad',
-    component: AddYourAd
+    component: AddYourAd,
+    meta: { title: 'Add your ad', crumbs:['Add your ad'] }
   },
   {
     path: '/myaccount',
     name: 'My account',
-    component: MyAccount
+    component: MyAccount,
+    meta: { title: 'My account', crumbs:['My account'] }
   },
   {
     path: '/about',
     name: 'About',
+    meta: { title: 'About', crumbs:['About'] },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
