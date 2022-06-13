@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Psi</h1>
+        <h1>{{this.type}}</h1>
         <div class="row row-cols-4 d-flex justify-content-center">
 
                 <div class="col card mr-0" v-for="myAnimal in myAnimals" :key="myAnimal.id">

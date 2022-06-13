@@ -22,10 +22,14 @@
 <div class="row">
     <div class="col col-sm-8 offset-2">
         <div class="details">
-        <p>Name: {{this.myAnimal.name}}</p>
-        <p>Description: {{this.myAnimal.desc}}</p>
-        <p>Weight: {{this.myAnimal.weight}}</p>
-        <p>Age: {{this.myAnimal.age}} years old</p>
+        <h5>Name: </h5>
+        <p>{{this.myAnimal.name}}</p>
+        <h5>Description: </h5>
+        <p>{{this.myAnimal.desc}}</p>
+        <h5>Weight: </h5>
+        <p>{{this.myAnimal.weight}}</p>
+        <h5>Age: </h5>
+        <p>{{this.myAnimal.age}} years old</p>
         </div>
     </div>
     
@@ -58,6 +62,9 @@
     border-radius: 10px;
     text-align: left;
     padding: 10px;
+}
+h5{
+    font-weight: bold;
 }
 
 </style>
