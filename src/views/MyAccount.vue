@@ -1,67 +1,30 @@
 <template>
-    <div id="myaccdiv">
-        <img src="../assets/background50.jpg" alt="">
-        <div id="form">
-            <table>
-                <tr>
-                    <td>Name:</td>
-                    <td>{{myuser.firstname}}</td>
-                </tr>
-                <tr>
-                    <td>Secondname:</td>
-                    <td>{{myuser.lastname}}</td>
-                </tr>
-                <tr>
-                    <td>Username:</td>
-                    <td>{{myuser.username}}</td>
-                </tr>
-                <tr>
-                    <td>Mail:</td>
-                    <td>{{myuser.mail}}</td>
-                </tr>
-                <tr>
-                    <td>Phone:</td>
-                    <td>{{myuser.phone}}</td>
-                </tr>
-                <tr>
-                    <td>Type:</td>
-                    <td>{{myuser.type}}</td>
-                </tr>
-            </table>
+    <div class="row">
+      <div class="col col-sm-12">
+        <h3>Oglasi: </h3>
+        <div v-for="ad in allads" :key="ad.user">
+        <div v-if="ad.user == 'myUser'">
+          <one-ad :id="ad.id" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad></div>
         </div>
-    </div>
+      </div>
+     </div>
 </template>
 
-<style>
-    #myaccdiv{
-        position: relative;
-    }
-    img{
-        width: 100%;
-        height: 100%;
-    }
-    #form{
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-</style>
-
 <script>
-    import allUsers from '../data/users.js'
-    export default{
-        name: 'MyAccount',
+    import OneAd from "../components/OneAd.vue"
+    import allAds from "../data/ads.js"
+    export default {
+        components: { OneAd },
         data(){
             return{
-                myuser:''
+                allAds:''
             }
         },
         created(){
-            if(localStorage.getItem('allUsers')==null){
-                localStorage.setItem('allUsers', JSON.stringify(allUsers))
+            if(localStorage.getItem('allAds')==null){
+                localStorage.setItem('allAds', JSON.stringify(allAds))
             }
-            this.myuser=allUsers['test']
+            this.allads=JSON.parse(localStorage.getItem('allAds'))
         }
     }
 </script>

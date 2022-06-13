@@ -4,6 +4,8 @@
         <h4> {{phone}} </h4>
         <p>{{description}}</p>
         <button class="btn pdf" @click="savePDF()">PDF</button>
+        <br>
+        <button class="btn danger" @click="deletePDF()">DELETE</button>
     </div>
 </template>
 
@@ -13,6 +15,11 @@
     }
     .pdf{
         background-color:#f7bc70;
+        margin-bottom: 10px;
+        border:solid;
+    }
+    .danger{
+        background-color: red;
         margin-bottom: 10px;
         border:solid;
     }
@@ -35,6 +42,11 @@ export default {
         },
         user:{
             default: ''
+        }
+    },
+    data(){
+        return{
+            allads: []
         }
     },
     created(){
@@ -61,6 +73,11 @@ export default {
             // Save the PDF
             doc.save(this.title+'.pdf');
 
+        },
+        deletePDF(){
+            this.allads=this.allads.filter(val => val.title != this.title)
+            localStorage.setItem('allAds', JSON.stringify(this.allads))
+            this.$router.go()
         }
     }
 }

@@ -1,10 +1,10 @@
 <template>
   <div id="ad-added-div">
-    <img alt="" src="../assets/background.jpg">
+    <img alt="" src="../assets/background50.jpg">
     <div id="text-center-div">
         <h1>Your Ad is successfuly added!</h1>
         <br>
-        <router-link to="/animals">Check it out!</router-link>
+        <router-link to="/lostpets">Check it out!</router-link>
     </div>
   </div>
 </template>
