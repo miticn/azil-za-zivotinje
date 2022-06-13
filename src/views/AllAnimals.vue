@@ -1,21 +1,21 @@
 <template>
     <div>
         <h1>{{this.grouptitle}}</h1>
-        <div v-if="currentLang=='en'">
+        <div v-if="currentLang=='sr'">
+        <label for="sort">Sortiraj:</label>
+            <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
+                <option>Starost</option>
+                <option>Ime</option>
+            </select>
+        </div>
+        <div v-else>
             <label for="sort">Sort:</label>
             <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
                 <option>Age</option>
                 <option>Name</option>
             </select>
         </div>
-        <div v-else>
-            <label for="sort">Sortiraj:</label>
-            <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
-                <option>Starost</option>
-                <option>Ime</option>
-            </select>
-        </div>
-        
+        <br>
         <div class="row row-cols-4 d-flex justify-content-center">
 
                 <div class="col card mr-0" v-for="myAnimal in myAnimals" :key="myAnimal.id">
@@ -95,6 +95,10 @@ import animals from "../data/animals.js"
             if(this.sort=="Name")
                 this.myAnimals.sort(compareName);
             if(this.sort=="Age")
+                this.myAnimals.sort(compareAge);
+            if(this.sort=="Ime")
+                this.myAnimals.sort(compareName);
+            if(this.sort=="Starost")
                 this.myAnimals.sort(compareAge);
 
             this.trigger=1;
