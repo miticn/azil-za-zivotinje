@@ -1,6 +1,10 @@
 <template>
     <div>
         <h1>{{this.type}}</h1>
+        <select @change="sortAnimals()" v-model="sort" :key=trigger>
+            <option>Age</option>
+            <option>Name</option>
+        </select>
         <div class="row row-cols-4 d-flex justify-content-center">
 
                 <div class="col card mr-0" v-for="myAnimal in myAnimals" :key="myAnimal.id">
@@ -36,7 +40,9 @@ import animals from "../data/animals.js"
           publicPath: process.env.BASE_URL,
           allAnimals:'',
           type:'',
-          myAnimals:[]
+          sort:'',
+          myAnimals:[],
+          trigger:''
       }
     },
     created(){
@@ -49,7 +55,34 @@ import animals from "../data/animals.js"
         }
     },
     methods:{
-        
+        sortAnimals(){
+            alert(1);
+            function compareName( a, b ) {
+                if ( a.name.toLowerCase() < b.name.toLowerCase() ){
+                    return -1;
+                }
+                if ( a.name.toLowerCase() > b.name.toLowerCase() ){
+                    return 1;
+                }
+                return 0;
+            }
+            function compareAge( a, b ) {
+                if ( parseInt(a.age) < parseInt(b.age) ){
+                    return -1;
+                }
+                if ( parseInt(a.age) > parseInt(b.age) ){
+                    return 1;
+                }
+                return 0;
+            }
+            
+            if(this.sort=="Name")
+                this.myAnimals.sort(compareName);
+            if(this.sort=="Age")
+                this.myAnimals.sort(compareAge);
+
+            this.trigger=1;
+        }
     }
 }
 </script>

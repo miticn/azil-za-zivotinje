@@ -12,9 +12,9 @@ const animals =[{
         id:2,
         group:"dog",
         name:"Sofia",
-        desc:"Sofia is just a pup at about a year old. She came to us from a shelter in CA. Sofia probably had been on her on awhile, she wasn't well socialized, but has been with a foster now for a month who has worked with her. She is housebroken!",
+        desc:"Sofia is just a pup at about two years old. She came to us from a shelter in CA. Sofia probably had been on her on awhile, she wasn't well socialized, but has been with a foster now for a month who has worked with her. She is housebroken!",
         weight:"20kg",
-        age:"1",
+        age:"2",
         path:'pets/dogs/2/',
         gallery:['1.jfif','2.jfif']
     },
@@ -34,7 +34,7 @@ const animals =[{
         name:"Una",
         desc:"Una is super friendly and sweet. She likes being pet and loves having your attention. If you are looking for a girl to cuddle with, then Una would love to meet you.",
         weight:"4kg",
-        age:"13",
+        age:"12",
         path:'pets/cats/4/',
         gallery:['1.jfif','2.jfif','3.jfif']
     },
