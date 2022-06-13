@@ -165,18 +165,21 @@ a.dropdown-toggle:active{
       if(this.$route['path'].startsWith('/animals') && (this.$route['path']!='/animals'||this.$route['path']!='/animals/')){
           if(this.$route['path'].includes('dog')){
             this.crumbs = ['Animal Groups', 'Dogs'];
-            this.routes = [];
+            this.routes = ['/animals/',this.$route['path']];
           }
           if(this.$route['path'].includes('cat')){
-            this.crumbs = ['Animal Groups', 'Cats']
+            this.crumbs = ['Animal Groups', 'Cats'];
+            this.routes = ['/animals/',this.$route['path']];
           }
           if(this.$route['path'].includes('bird')){
-            this.crumbs = ['Animal Groups', 'Birds']
+            this.crumbs = ['Animal Groups', 'Birds'];
+            this.routes = ['/animals/',this.$route['path']];
           }
           if(this.$route['name']=='One Animal'){
             let id = this.$route.params.id;
             let animal = animals.find(animal=>animal.id==id);
             this.crumbs[2] = animal.name;
+            this.routes = ['/animals/','/animals/'+this.$route.params.type,this.$route['path']];
           }
         
       }else {
