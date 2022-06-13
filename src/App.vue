@@ -15,7 +15,7 @@
 
             <div class="btn-group">
               <router-link to="/animals" :class="($route.name =='animals')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.animals}}</router-link>
-              <a href="#" class="btn btn-warning dropdown-toggle dropdown-toggle-split" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="#" class="btn btn-select dropdown-toggle dropdown-toggle-split" role="button" id="dropdownMenuLink" aria-haspopup="true" data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="visually-hidden">Toggle Dropdown</span>
               </a>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -32,6 +32,7 @@
             <router-link to="/addyourad" :class="($route.name =='addyourad')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.add}}</router-link>
             <router-link to="/myaccount" :class="($route.name =='myaccount')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.myaccount}}</router-link>
             <router-link to="/about" :class="($route.name =='about')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.about}}</router-link>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="btn-group">
               <button type="button" @click="changeLang('en')" :class="(this.currentLang=='en')?'btn btn-sm active':'btn btn-sm '">EN</button>
               <button type="button" @click="changeLang('sr')" :class="(this.currentLang=='sr')?'btn btn-sm active':'btn btn-sm '">SR</button>
@@ -102,6 +103,28 @@ nav button.btn{
 a, a:hover{
   color:inherit;
   text-decoration: inherit;
+}
+a.dropdown-toggle:link{
+  color:#f7bc70;
+  border-radius: 0;
+  text-decoration: none;
+  outline: none !important;
+  box-shadow: none;
+}
+a.dropdown-toggle:visited{
+  color:#f7bc70;
+  text-decoration: none;
+  outline: none
+}
+a.dropdown-toggle:hover{
+  color:#f7bc70;
+  text-decoration: none;
+  outline: none
+}
+a.dropdown-toggle:active{
+  color:#f7bc70;
+  text-decoration: none;
+  outline: none 
 }
 </style>
 
