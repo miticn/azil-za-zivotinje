@@ -22,6 +22,7 @@
     </button>
 
 </div>
+<br><br>
 <div class="row">
     <div class="col col-sm-8 offset-2">
         <div class="details">
@@ -41,8 +42,9 @@
         <p v-else>{{this.myAnimal.age}} godina</p>
         </div>
     </div>
-    
 </div>
+
+    <br>
 </template>
 
 <style scoped>
