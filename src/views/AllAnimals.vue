@@ -1,7 +1,8 @@
 <template>
     <div>
         <h1>{{this.type}}</h1>
-        <select @change="sortAnimals()" v-model="sort" :key=trigger>
+        <label for="sort">Sort:</label>
+        <select name="sort" @change="sortAnimals()" v-model="sort" :key=trigger>
             <option>Age</option>
             <option>Name</option>
         </select>

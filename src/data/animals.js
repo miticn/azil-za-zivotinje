@@ -6,7 +6,8 @@ const animals =[{
         weight:"9kg",
         age:"5",
         path:'pets/dogs/1/',
-        gallery:['1.jfif','2.jfif','3.jfif','4.jfif','5.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif','4.jfif','5.jfif'],
+        yt:'https://www.youtube.com/embed/bx7BjjqHf2U'
     },
     {
         id:2,
@@ -16,7 +17,8 @@ const animals =[{
         weight:"20kg",
         age:"2",
         path:'pets/dogs/2/',
-        gallery:['1.jfif','2.jfif']
+        gallery:['1.jfif','2.jfif'],
+        yt:'https://www.youtube.com/embed/P9Dxnpw12D4'
     },
     {
         id:3,
@@ -26,7 +28,8 @@ const animals =[{
         weight:"5kg",
         age:"1",
         path:'pets/dogs/3/',
-        gallery:['1.jfif','2.jfif','3.jfif','4.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif','4.jfif'],
+        yt:'https://www.youtube.com/embed/dLEOv2ZDO-E'
     },
     {
         id:4,
@@ -36,7 +39,8 @@ const animals =[{
         weight:"4kg",
         age:"12",
         path:'pets/cats/4/',
-        gallery:['1.jfif','2.jfif','3.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif'],
+        yt:'https://www.youtube.com/embed/aaNMQgtePQY'
     },
     {
         id:5,
@@ -46,7 +50,8 @@ const animals =[{
         weight:"4kg",
         age:"13",
         path:'pets/cats/5/',
-        gallery:['1.jfif','2.jfif','3.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif'],
+        yt:'https://www.youtube.com/embed/_xFAWSYJT88'
     },
     {
         id:6,
@@ -56,7 +61,8 @@ const animals =[{
         weight:"8kg",
         age:"9",
         path:'pets/cats/6/',
-        gallery:['1.jfif','2.jfif','3.jfif','4.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif','4.jfif'],
+        yt:'https://www.youtube.com/embed/hTNZoj8vioM'
     },
     {
         id:7,
@@ -66,7 +72,8 @@ const animals =[{
         weight:"500g",
         age:"6",
         path:'pets/birds/7/',
-        gallery:['1.jfif','2.jfif','3.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif'],
+        yt:'https://www.youtube.com/embed/iqtNwFKMsqk'
     },
     {
         id:8,
@@ -76,7 +83,8 @@ const animals =[{
         weight:"800g",
         age:"15",
         path:'pets/birds/8/',
-        gallery:['1.jfif','2.jfif','3.jfif']
+        gallery:['1.jfif','2.jfif','3.jfif'],
+        yt:'https://www.youtube.com/embed/-FNy3TErKKA'
     },
     {
         id:9,
@@ -86,7 +94,8 @@ const animals =[{
         weight:"1kg",
         age:"25",
         path:'pets/birds/9/',
-        gallery:['1.jfif','2.jfif']
+        gallery:['1.jfif','2.jfif'],
+        yt:'https://www.youtube.com/embed/OARjs1316Q0'
     }
 ];
 
