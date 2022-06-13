@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row row-cols-4">
+        <div class="row row-cols-4 d-flex justify-content-center">
             <div class="col card mr-0 ">
                 <a href="/animals/dog/">
                 <img class="card-img-top" :src="`${publicPath}`+'pets/dogs/1/1.jfif'" alt="Dogs">
