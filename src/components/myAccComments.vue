@@ -7,8 +7,11 @@
             <p>Naslov teme: {{this.idOglas2title[comment.id]}}</p>
             <hr>
         </div>
-        <h1 v-if="this.myComments.length==0">Nema Komentara</h1>
     </div>
+        <div v-if="this.myComments.length==0">
+            <h1 v-if="currentLang=='sr'">Nema komentara od ovog korisnika</h1>
+            <h1 v-else>There are no comments from this user.</h1>
+        </div>
     </a>
     
 </template>

@@ -1,4 +1,5 @@
 <template>
+    <br>
     <div class="container">
         <div class="row">
                 <div id="ads" class="col col-sm-8 mr-0 pr-0">
@@ -11,6 +12,7 @@
                 </div>
         </div>
     </div>
+    <br><br>
 </template>
 <style scoped>
     .selected{

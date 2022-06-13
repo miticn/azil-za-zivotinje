@@ -82,7 +82,7 @@ export default {
 
         },
         deletePDF(){
-            this.allads=this.allads.filter(val => val.title != this.title)
+            this.allads=this.allads.filter(val => val.id != this.id)
             localStorage.setItem('allAds', JSON.stringify(this.allads))
             this.comments = this.comments.filter(val => val.id != this.id)
             localStorage.setItem('comments', JSON.stringify(this.comments))
