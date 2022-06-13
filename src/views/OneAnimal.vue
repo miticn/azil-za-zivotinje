@@ -1,22 +1,22 @@
 <template>
 <!--<div>{{ $route.params.id }}</div>-->
 <div class="row carousel-row">
-    <button id="cb" class="carousel-control-prev carousel-dark col col-sm-1 col-1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button id="cb" class="carousel-control-prev carousel-dark col col-md-1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <div id="carouselExampleIndicators" class="carousel mx-auto col col-sm-10" data-bs-ride="true">
+    <div id="carouselExampleIndicators" class="carousel mx-auto col col-md-10" data-bs-ride="true">
         <div class="carousel-inner">
             <div v-for="(asset, index) in myAnimal.gallery" :key="asset" :class="(index==0)?'carousel-item active':'carousel-item'">
                 <img :src="`${publicPath}`+myAnimal.path+asset" class="d-block w-100" :alt="index">
             </div>
-            <div class='carousel-item ratio ratio-16x9' id="carousel-video">
+            <div class='carousel-item ratio ratio-16x9' id="carousel-video" title="YouTube video player" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                <iframe id="video" :src="myAnimal.yt"></iframe>
             </div>
         </div>
         
     </div>
-    <button id="cb" class="carousel-control-next align-middle carousel-dark col col-sm-1 col-1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button id="cb" class="carousel-control-next align-middle carousel-dark col col-md-1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -49,17 +49,17 @@
 
 <style scoped>
 .carousel-row{
-    max-height: 80vh;
+    max-height: 50vh;
     width: auto;
     background-color: white;
 
 }
 .carousel,.item,.active {
-   height:80vh;
+   height:50vh;
    width: auto;
  }
 .carousel-inner .carousel-indicators{
-    height:80vh;
+    height:50vh;
     width: auto;
 }
 #cb{
@@ -79,7 +79,7 @@ h5{
 }
 iframe, #video, #carousel-video{
     min-height: 33vh;
-    min-width: 50rem;
+    min-width: 50vh;
 }
 
 </style>
