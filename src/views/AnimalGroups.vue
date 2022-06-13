@@ -40,7 +40,7 @@
         height: auto;
     }
     #main-div{
-        height: 100vh;
+        padding-bottom: 10px;
     }
 </style>
 <script>

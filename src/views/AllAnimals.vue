@@ -44,7 +44,7 @@
         position: relative; 
     }
     #mainframe{
-        height: 100vh;
+        padding-bottom: 10px;
     }
 </style>
 

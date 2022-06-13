@@ -10,7 +10,7 @@
             <div v-for="(asset, index) in myAnimal.gallery" :key="asset" :class="(index==0)?'carousel-item active':'carousel-item'">
                 <img :src="`${publicPath}`+myAnimal.path+asset" class="d-block w-100" :alt="index">
             </div>
-            <div class='carousel-item ratio ratio-16x9' id="carousel-video" title="YouTube video player" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <div class='carousel-item ratio ratio-16x9' id="carousel-video" title="YouTube video player" frameborder="0"  :allow="'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'" :allowfullscreen='true'>
                <iframe id="video" :src="myAnimal.yt"></iframe>
             </div>
         </div>
