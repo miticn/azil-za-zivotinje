@@ -4,7 +4,7 @@
     <div id="text-center-div">
         <h1>{{adpagelang.added}}</h1>
         <br>
-        <router-link to="/lostpets">{{adpagelang.check}}</router-link>
+        <button class="check" @click="check()">{{adpagelang.check}}</button>
     </div>
   </div>
 </template>
@@ -23,6 +23,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+    .check{
+        background-color:#f7bc70;
+        margin-bottom: 10px;
+        border:solid;
+    }
 </style>
 
 <script>
@@ -38,6 +43,11 @@
         created(){
             this.currentLang = localStorage.getItem("lang");
             this.adpagelang = AdPageLang[this.currentLang];
+        },
+        methods:{
+            check(){
+                this.$router.push('/lostpets')
+            }
         }
     }
 </script>

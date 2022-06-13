@@ -6,12 +6,28 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a href="/"><Header></Header></a>
-    
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav ms-auto">
+        <div class="navbar-nav ms-auto dropdown navbar">
             <router-link to="/" :class="($route.name =='home')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.home}}</router-link>
-            <router-link to="/animals" :class="($route.name =='animals')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.animals}}</router-link>
+
+
+
+            <div class="btn-group">
+              <router-link to="/animals" :class="($route.name =='animals')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.animals}}</router-link>
+              <a href="#" class="btn btn-warning dropdown-toggle dropdown-toggle-split" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+
+
+
+
             <router-link to="/lostpets" :class="($route.name =='lostpets')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.lostpets}}</router-link>
             <router-link to="/addyourad" :class="($route.name =='addyourad')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.add}}</router-link>
             <router-link to="/myaccount" :class="($route.name =='myaccount')?'nav-item nav-link active':'nav-item nav-link'">{{mylangData.myaccount}}</router-link>

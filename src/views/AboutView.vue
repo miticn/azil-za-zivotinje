@@ -11,7 +11,6 @@
 </template>
 <style>
   .about{
-    height: 100vh;
   }
 </style>
 
