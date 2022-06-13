@@ -5,7 +5,7 @@
         <p>{{description}}</p>
         <button class="btn pdf" @click="savePDF()">PDF</button>
         <br>
-        <button class="btn danger" @click="deletePDF()">DELETE</button>
+        <button v-if="this.del==true" class="btn danger" @click="deletePDF()">DELETE</button>
     </div>
 </template>
 
@@ -42,6 +42,9 @@ export default {
         },
         user:{
             default: ''
+        },
+        del:{
+            default: false
         }
     },
     data(){

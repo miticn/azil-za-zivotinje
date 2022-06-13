@@ -4,7 +4,7 @@
         <h3>Oglasi: </h3>
         <div v-for="ad in allads" :key="ad.user">
         <div v-if="ad.user == 'myUser'">
-          <one-ad :id="ad.id" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user"></one-ad></div>
+          <one-ad :id="ad.id" :title="ad.title" :phone="ad.phone" :description="ad.description" :user="ad.user" :del="true"></one-ad></div>
         </div>
       </div>
      </div>

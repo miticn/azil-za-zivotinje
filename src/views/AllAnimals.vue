@@ -20,8 +20,10 @@
         height: auto;
     }
     .card-img-top{
-        width:100%;
+        width: 100%;
+        /*min-height: 40vw;*/
         height: auto;
+        position: relative; 
     }
 </style>
 
